@@ -1,3 +1,25 @@
 <resources>
-    <string name="app_name">Cakeets</string>
+
+    <string name="app.name">Cakeets</string>
+    <string name="app.company">Me3drem</string>
+
+    <string name="button.comeon">Come On</string>
+    <string name="button.next">Next</string>
+    <string name="button.skip">Skip</string>
+
+    <string name="onboarding.welcome.headline">Bienvenido a Cakeets</string>
+    <string name="onboarding.welcome.body">Hola! Veo que eres nuevo en Cakeets. Estas por ingresar a la primera plataforma creada para ustedes.</string>
+    <string name="onboarding.buyers.headline">Un Dulce hoy, mañana, siempre</string>
+    <string name="onboarding.buyers.body">A todos nos gusta lo dulce, en algún momento nuestro paladar lo desea. Podrás darte el gusto siempre que quieras en tan solo unos minutos.</string>
+    <string name="onboarding.sellers.headline">¿Tienes un negocio?</string>
+    <string name="onboarding.sellers.body">Abre tus puertas al mundo en Cakeets. Publica tus trabajos en la plataforma y Cakeets los ofrecerá por ti. Tus clientes te encontraran a ti sin tener que estar en varios grupos o pagar por un anuncio en la radio.</string>
+    <string name="onboarding.security.headline">Compras protegidas para todos</string>
+    <string name="onboarding.security.body">Compra sin miedo a que te estafen. Las compras están protegidas para ambos, podrás solicitar un rembolso si es necesario y el maleante recibirá lo que merece.</string>
+    <string name="onboarding.share.headline">Invitemos gente</string>
+    <string name="onboarding.share.body">Todos tienen sueños y Cakeets esta aquí para cumplir los suyos. Invitemos a todos a crecer, a darse un gusto sobre todo.</string>
+    <string name="onboarding.comeon.headline">Empecemos</string>
+    <string name="onboarding.comeon.body">Ya sabes que es Cakeets y todo lo que te espera. Empecemos con esta aventura y disfruta de ella. </string>
+
+    <string name="contentdescription.onboarding.illustrations">Flat illustration for the representation of the characteristics of the app</string>
+
 </resources>
