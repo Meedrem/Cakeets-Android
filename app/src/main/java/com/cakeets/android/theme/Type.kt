@@ -1,10 +1,12 @@
-package com.cakeets.android.ui.theme
+package com.cakeets.android.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
+import com.cakeets.android.R
 
 // Set of Material typography styles to start with
 val Typography = Typography(
@@ -31,4 +33,25 @@ val Typography = Typography(
         letterSpacing = 0.5.sp
     )
     */
+)
+
+val YesevaOne = FontFamily(
+    Font(R.font.yesevaone, FontWeight.W400),
+)
+
+val YesevaOneTypography = Typography(
+    titleLarge = TextStyle(
+        fontFamily = YesevaOne,
+        fontWeight = FontWeight.W400,
+        fontSize = 22.sp,
+        lineHeight = 28.sp,
+        letterSpacing = 0.sp,
+    ),
+    displayLarge = TextStyle(
+        fontFamily = YesevaOne,
+        fontWeight = FontWeight.W400,
+        fontSize = 57.sp,
+        lineHeight = 64.sp,
+        letterSpacing = -0.25.sp,
+    )
 )
