@@ -12,16 +12,18 @@ import com.cakeets.android.app.launch.screens.Splash
 fun AppNavigation() {
 
     val controller = rememberNavController()
-
-    val uiController = rememberSystemUiController()
+    val ui = rememberSystemUiController()
 
     NavHost(
         navController = controller,
         startDestination = AppScreens.Splash.route
     ) {
-        composable(AppScreens.Splash.route) { Splash(controller, uiController) }
-        composable(AppScreens.OnBoarding.route) { OnBoarding(uiController) }
+
+        composable(AppScreens.Splash.route) { Splash(controller, ui) }
+        composable(AppScreens.OnBoarding.route) { OnBoarding(ui) }
+
         composable(AppScreens.Home.route) {  }
+
     }
 
 }
