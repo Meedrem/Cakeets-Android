@@ -5,6 +5,8 @@
 
     <string name="button.comeon">Come On</string>
     <string name="button.next">Next</string>
+    <string name="button.signin">Sign In</string>
+    <string name="button.signup">Sign Up</string>
     <string name="button.skip">Skip</string>
 
     <string name="onboarding.welcome.headline">Bienvenido a Cakeets</string>
@@ -20,6 +22,10 @@
     <string name="onboarding.comeon.headline">Empecemos</string>
     <string name="onboarding.comeon.body">Ya sabes que es Cakeets y todo lo que te espera. Empecemos con esta aventura y disfruta de ella. </string>
 
+    <string name="access.headline">Hola!</string>
+    <string name="access.body">Ya queda poco para empezar tu aventura y empieces</string>
+
     <string name="contentdescription.onboarding.illustrations">Flat illustration for the representation of the characteristics of the app</string>
+    <string name="contentdescription.access">Flat illustration</string>
 
 </resources>

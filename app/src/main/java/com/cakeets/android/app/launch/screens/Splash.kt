@@ -26,7 +26,7 @@ fun Splash(controller: NavHostController, ui: SystemUiController) {
         controller.navigate(AppScreens.OnBoarding.route)
     }
 
-    LaunchScreen()
+    Screen()
 
 }
 
@@ -43,7 +43,7 @@ private fun Setup(ui: SystemUiController) {
 }
 
 @Composable
-fun LaunchScreen() {
+private fun Screen() {
 
     Column(
         modifier = Modifier

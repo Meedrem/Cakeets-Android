@@ -7,7 +7,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.pager.HorizontalPager
-import androidx.compose.foundation.pager.PagerState
 import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
@@ -19,19 +18,22 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
 import com.cakeets.android.R
+import com.cakeets.android.app.AppScreens
 import com.cakeets.android.app.launch.domain.model.Feature
 import com.cakeets.android.app.launch.screens.components.ContentPage
 import com.cakeets.android.app.launch.screens.components.Index
+import com.cakeets.android.theme.PoppinsTypography
 import com.google.accompanist.systemuicontroller.SystemUiController
 import kotlinx.coroutines.launch
 
 @Composable
-fun OnBoarding(ui: SystemUiController) {
+fun OnBoarding(controller: NavHostController, ui: SystemUiController) {
 
     Setup(ui)
 
-    Screen()
+    Screen(controller)
 
 }
 
@@ -49,7 +51,7 @@ private fun Setup(ui: SystemUiController) {
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-private fun Screen() {
+private fun Screen(controller: NavHostController) {
 
     Column(
         Modifier
@@ -60,7 +62,10 @@ private fun Screen() {
         val state = rememberPagerState()
         val coroutine = rememberCoroutineScope()
 
-        Navbar(index.size, state.currentPage)
+        Navbar(index.size, state.currentPage) {
+            controller.popBackStack()
+            controller.navigate(AppScreens.Access.route)
+        }
 
         HorizontalPager(
             modifier = Modifier
@@ -83,7 +88,10 @@ private fun Screen() {
                         state.scrollToPage(state.currentPage + 1)
                     }
             },
-            onComeOnClicked = {}
+            onComeOnClicked = {
+                controller.popBackStack()
+                controller.navigate(AppScreens.Access.route)
+            }
         )
 
     }
@@ -91,7 +99,7 @@ private fun Screen() {
 }
 
 @Composable
-fun Navbar(size: Int, currentPage: Int) {
+private fun Navbar(size: Int, currentPage: Int, onSkipClicked: () -> Unit) {
 
     Box(
         Modifier
@@ -103,12 +111,13 @@ fun Navbar(size: Int, currentPage: Int) {
             TextButton(
                 modifier = Modifier
                     .align(Alignment.CenterEnd),
-                onClick = {}
+                onClick = onSkipClicked
             ) {
 
                 Text(
                     stringResource(id = R.string.button_skip),
-                    color = MaterialTheme.colorScheme.onBackground
+                    color = MaterialTheme.colorScheme.onBackground,
+                    style = PoppinsTypography.labelLarge
                 )
 
             }
@@ -118,7 +127,7 @@ fun Navbar(size: Int, currentPage: Int) {
 }
 
 @Composable
-fun IndexNavbar(
+private fun IndexNavbar(
     size: Int,
     currentPage: Int,
     onNextClicked: () -> Unit,
@@ -140,7 +149,10 @@ fun IndexNavbar(
                 onClick = onComeOnClicked
             ) {
 
-                Text(text = stringResource(id = R.string.button_comeon))
+                Text(
+                    text = stringResource(id = R.string.button_comeon),
+                    style = PoppinsTypography.labelLarge
+                )
 
             }
         else
@@ -150,7 +162,10 @@ fun IndexNavbar(
                 onClick = onNextClicked
             ) {
 
-                Text(text = stringResource(id = R.string.button_next))
+                Text(
+                    text = stringResource(id = R.string.button_next),
+                    style = PoppinsTypography.labelLarge
+                )
 
             }
 

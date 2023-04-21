@@ -41,16 +41,14 @@ fun ContentPage(content: Feature) {
 
         Text(
             text = stringResource(content.headline),
-            style = YesevaOneTypography.displaySmall,
-            color= MaterialTheme.colorScheme.onBackground,
+            style = YesevaOneTypography.displaySmall
         )
 
         Spacer(Modifier.height(8.dp))
 
         Text(
             text = stringResource(content.body),
-            style = PoppinsTypography.bodyLarge,
-            color= MaterialTheme.colorScheme.onBackground.copy(alpha=0.8f)
+            style = PoppinsTypography.bodyLarge
         )
 
     }
