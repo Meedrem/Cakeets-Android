@@ -56,6 +56,7 @@ private fun Screen(controller: NavHostController) {
     Column(
         Modifier
             .fillMaxSize()
+            .padding(16.dp)
     ) {
 
         val index = Feature.get()
@@ -104,7 +105,6 @@ private fun Navbar(size: Int, currentPage: Int, onSkipClicked: () -> Unit) {
     Box(
         Modifier
             .fillMaxWidth()
-            .padding(12.dp)
     ) {
 
         if (currentPage != size - 1)
@@ -137,7 +137,6 @@ private fun IndexNavbar(
     Box(
         Modifier
             .fillMaxWidth()
-            .padding(16.dp)
     ) {
 
         Index(size, currentPage)

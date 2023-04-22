@@ -36,7 +36,11 @@ private fun Screen(controller: NavHostController) {
             .padding(16.dp)
     ) {
 
+        Spacer(Modifier.height(16.dp))
+
         AppName()
+
+        Spacer(Modifier.height(64.dp))
 
         Content(
             Modifier
@@ -65,8 +69,6 @@ private fun AppName() {
             .fillMaxWidth()
     ) {
 
-        Spacer(Modifier.height(16.dp))
-
         Text(
             modifier = Modifier
                 .align(Alignment.CenterHorizontally),
@@ -82,8 +84,6 @@ private fun AppName() {
 private fun Content(modifier: Modifier) {
 
     Column(modifier) {
-
-        Spacer(Modifier.height(64.dp))
 
         Image(
             modifier = Modifier

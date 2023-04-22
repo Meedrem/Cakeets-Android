@@ -25,6 +25,13 @@
     <string name="access.headline">Hola!</string>
     <string name="access.body">Ya queda poco para empezar tu aventura y empieces</string>
 
+    <string name="signin.headline">Bienvenido</string>
+    <string name="signin.body">Aqui estas de nuevo! Tenemos muchas noticias para ti</string>
+    <string name="signin.alternative">o</string>
+    <string name="signin.noaccount">Do you have not Account?</string>
+    <string name="signin.signup">Sign Up</string>
+    <string name="signin.forgotpassword">Forgot Password?</string>
+
     <string name="contentdescription.onboarding.illustrations">Flat illustration for the representation of the characteristics of the app</string>
     <string name="contentdescription.access">Flat illustration</string>
 
