@@ -102,4 +102,12 @@ val PoppinsTypography = Typography(
         lineHeight = 20.sp,
         letterSpacing = 0.1.sp
     ),
+    labelSmall = TextStyle(
+        fontFamily = Poppins,
+        fontWeight = FontWeight.Medium,
+        fontStyle = FontStyle.Normal,
+        fontSize = 11.sp,
+        lineHeight = 16.sp,
+        letterSpacing = 0.5.sp
+    )
 )
