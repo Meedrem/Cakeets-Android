@@ -1,7 +1,6 @@
 package com.cakeets.android.app.access.screens
 
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -13,12 +12,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.text.ClickableText
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.KeyboardArrowLeft
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.RadioButton
@@ -37,8 +32,9 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.cakeets.android.R
 import com.cakeets.android.app.AppScreens
+import com.cakeets.android.app.access.screens.components.Navbar
 import com.cakeets.android.theme.PoppinsTypography
-import com.cakeets.android.ui.Clickable
+import com.cakeets.android.shape.Clickable
 
 @Composable
 fun SignUp(controller: NavHostController) {
@@ -47,111 +43,64 @@ fun SignUp(controller: NavHostController) {
 
 @Composable
 private fun Screen(controller: NavHostController) {
-
     Column(
         Modifier
             .fillMaxSize()
             .padding(16.dp)
     ) {
-
         Navbar {
 
         }
-
         Spacer(Modifier.height(32.dp))
-
         Content(controller)
-
     }
-
-}
-
-@Composable
-private fun Navbar(onBackClicked: () -> Unit) {
-
-    Box(
-        Modifier
-            .fillMaxWidth()
-    ) {
-
-        IconButton(
-            modifier = Modifier
-                .align(Alignment.CenterStart),
-            onClick = onBackClicked
-        ) {
-
-            Icon(Icons.Rounded.KeyboardArrowLeft, null)
-
-        }
-
-    }
-
 }
 
 @Composable
 private fun Content(controller: NavHostController) {
-
     Column(
-        modifier = Modifier
+        Modifier
             .fillMaxSize()
     ) {
-
         Text(
             text = stringResource(id = R.string.signin_headline),
             style = PoppinsTypography.displaySmall,
             fontWeight = FontWeight.Bold
         )
-
-        Spacer(Modifier.height(8.dp))
-
         Text(
             text = stringResource(id = R.string.signin_body),
             style = PoppinsTypography.bodyLarge
         )
-
         Spacer(Modifier.height(64.dp))
-
         Form(
             Modifier.weight(0.8f),
-            onClientSelected = {
-                controller.navigate(AppScreens.GetPersonalData.route)
-            },
-            onProviderSelected = {
-                controller.navigate(AppScreens.GetPersonalData.route)
-            }
+            onClientSelected = { controller.navigate(AppScreens.GetPersonalData.route) },
+            onProviderSelected = { controller.navigate(AppScreens.GetPersonalData.route) }
         )
-
         Spacer(Modifier.height(64.dp))
-
         Row(
             modifier = Modifier
                 .fillMaxWidth(),
             horizontalArrangement = Arrangement.Center
         ) {
-
             Text(
                 stringResource(id = R.string.signin_noaccount),
                 color = MaterialTheme.colorScheme.onBackground,
                 style = PoppinsTypography.labelLarge
             )
-
             Spacer(Modifier.width(8.dp))
             ClickableText(
                 text = AnnotatedString(stringResource(id = R.string.signin_signup)),
                 style = Clickable(),
                 onClick = {}
             )
-
         }
-
     }
-
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun Form(modifier: Modifier, onClientSelected: () -> Unit, onProviderSelected: () -> Unit) {
-
     Column(
         modifier = modifier
             .fillMaxSize()
@@ -161,7 +110,6 @@ private fun Form(modifier: Modifier, onClientSelected: () -> Unit, onProviderSel
             ),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-
         var emailState by remember { mutableStateOf("") }
         OutlinedTextField(
             modifier = Modifier
@@ -173,9 +121,7 @@ private fun Form(modifier: Modifier, onClientSelected: () -> Unit, onProviderSel
             singleLine = true,
             maxLines = 1
         )
-
         Spacer(Modifier.height(16.dp))
-
         var passwordState by remember { mutableStateOf("") }
         OutlinedTextField(
             modifier = Modifier
@@ -187,9 +133,7 @@ private fun Form(modifier: Modifier, onClientSelected: () -> Unit, onProviderSel
             singleLine = true,
             maxLines = 1
         )
-
         Spacer(Modifier.height(16.dp))
-
         var repeatPasswordState by remember { mutableStateOf("") }
         OutlinedTextField(
             modifier = Modifier
@@ -201,11 +145,9 @@ private fun Form(modifier: Modifier, onClientSelected: () -> Unit, onProviderSel
             singleLine = true,
             maxLines = 1
         )
-
         Spacer(Modifier.height(16.dp))
         val radioOptions = listOf("Client", "Provider")
         val (selectedOption, onOptionSelected) = remember { mutableStateOf(radioOptions[0]) }
-
         Text(
             text = "Type of Account",
             style = PoppinsTypography.labelLarge,
@@ -213,7 +155,6 @@ private fun Form(modifier: Modifier, onClientSelected: () -> Unit, onProviderSel
                     fillMaxWidth()
         )
         Spacer(Modifier.height(8.dp))
-
         Column {
             radioOptions.forEach { text ->
                 Row(
@@ -238,22 +179,16 @@ private fun Form(modifier: Modifier, onClientSelected: () -> Unit, onProviderSel
                 }
             }
         }
-
         Spacer(Modifier.height(8.dp))
-
         Button(
             modifier = Modifier
                 .fillMaxWidth(),
             onClick = if (selectedOption == "Client") onClientSelected else onProviderSelected
         ) {
-
             Text(
                 stringResource(id = R.string.signin_noaccount),
                 style = PoppinsTypography.labelLarge
             )
-
         }
-
     }
-
 }

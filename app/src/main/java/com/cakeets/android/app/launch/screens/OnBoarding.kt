@@ -30,11 +30,8 @@ import kotlinx.coroutines.launch
 
 @Composable
 fun OnBoarding(controller: NavHostController, ui: SystemUiController) {
-
     Setup(ui)
-
     Screen(controller)
-
 }
 
 @Composable
@@ -52,22 +49,18 @@ private fun Setup(ui: SystemUiController) {
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 private fun Screen(controller: NavHostController) {
-
     Column(
         Modifier
             .fillMaxSize()
             .padding(16.dp)
     ) {
-
         val index = Feature.get()
         val state = rememberPagerState()
         val coroutine = rememberCoroutineScope()
-
         Navbar(index.size, state.currentPage) {
             controller.popBackStack()
             controller.navigate(AppScreens.Access.route)
         }
-
         HorizontalPager(
             modifier = Modifier
                 .fillMaxSize()
@@ -75,11 +68,8 @@ private fun Screen(controller: NavHostController) {
             pageCount = index.size,
             state = state
         ) { page ->
-
             ContentPage(index[page])
-
         }
-
         IndexNavbar(
             size = index.size,
             currentPage = state.currentPage,
@@ -94,34 +84,27 @@ private fun Screen(controller: NavHostController) {
                 controller.navigate(AppScreens.Access.route)
             }
         )
-
     }
-
 }
 
 @Composable
 private fun Navbar(size: Int, currentPage: Int, onSkipClicked: () -> Unit) {
-
     Box(
         Modifier
             .fillMaxWidth()
     ) {
-
         if (currentPage != size - 1)
             TextButton(
                 modifier = Modifier
                     .align(Alignment.CenterEnd),
                 onClick = onSkipClicked
             ) {
-
                 Text(
                     stringResource(id = R.string.button_skip),
                     color = MaterialTheme.colorScheme.onBackground,
                     style = PoppinsTypography.labelLarge
                 )
-
             }
-
     }
 
 }
@@ -133,14 +116,11 @@ private fun IndexNavbar(
     onNextClicked: () -> Unit,
     onComeOnClicked: () -> Unit
 ) {
-
     Box(
         Modifier
             .fillMaxWidth()
     ) {
-
         Index(size, currentPage)
-
         if (currentPage == size - 1)
             Button(
                 modifier = Modifier
@@ -165,9 +145,6 @@ private fun IndexNavbar(
                     text = stringResource(id = R.string.button_next),
                     style = PoppinsTypography.labelLarge
                 )
-
             }
-
     }
-
 }

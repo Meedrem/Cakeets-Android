@@ -11,23 +11,19 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import com.cakeets.android.app.AppScreens
-import com.cakeets.android.app.launch.screens.components.LogoComponent
+import com.cakeets.android.app.launch.screens.components.Logo
 import com.google.accompanist.systemuicontroller.SystemUiController
 import kotlinx.coroutines.delay
 
 @Composable
 fun Splash(controller: NavHostController, ui: SystemUiController) {
-
     Setup(ui)
-
     LaunchedEffect(key1 = true) {
         delay(3000)
         controller.popBackStack()
         controller.navigate(AppScreens.OnBoarding.route)
     }
-
     Screen()
-
 }
 
 @Composable
@@ -44,7 +40,6 @@ private fun Setup(ui: SystemUiController) {
 
 @Composable
 private fun Screen() {
-
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -52,9 +47,11 @@ private fun Screen() {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-
-        LogoComponent()
-
+        Content()
     }
+}
 
+@Composable
+private fun Content() {
+    Logo()
 }

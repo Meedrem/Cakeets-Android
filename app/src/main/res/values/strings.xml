@@ -8,6 +8,7 @@
     <string name="button.signin">Sign In</string>
     <string name="button.signup">Sign Up</string>
     <string name="button.skip">Skip</string>
+    <string name="button.forgotpassword">Forgot Password?</string>
 
     <string name="onboarding.welcome.headline">Bienvenido a Cakeets</string>
     <string name="onboarding.welcome.body">Hola! Veo que eres nuevo en Cakeets. Estas por ingresar a la primera plataforma creada para ustedes.</string>
@@ -29,8 +30,6 @@
     <string name="signin.body">Aqui estas de nuevo! Tenemos muchas noticias para ti</string>
     <string name="signin.alternative">o</string>
     <string name="signin.noaccount">Do you have not Account?</string>
-    <string name="signin.signup">Sign Up</string>
-    <string name="signin.forgotpassword">Forgot Password?</string>
 
     <string name="contentdescription.onboarding.illustrations">Flat illustration for the representation of the characteristics of the app</string>
     <string name="contentdescription.access">Flat illustration</string>

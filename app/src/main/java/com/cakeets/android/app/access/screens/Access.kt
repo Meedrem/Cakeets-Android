@@ -29,123 +29,79 @@ fun Access(controller: NavHostController) {
 
 @Composable
 private fun Screen(controller: NavHostController) {
-    
     Column(
         Modifier
             .fillMaxSize()
             .padding(16.dp)
     ) {
-
-        Spacer(Modifier.height(16.dp))
-
-        AppName()
-
-        Spacer(Modifier.height(64.dp))
-
         Content(
             Modifier
                 .fillMaxSize()
                 .weight(0.8f)
         )
-
-        AccessOptions(
-            {
-                controller.navigate(AppScreens.SignIn.route)
-            },
-            {
-                controller.navigate(AppScreens.SignUp.route)
-            }
+        AccessMethods(
+            { controller.navigate(AppScreens.SignIn.route) },
+            { controller.navigate(AppScreens.SignUp.route) }
         )
-
     }
-    
 }
 
 @Composable
-private fun AppName() {
-
-    Column(
-        Modifier
-            .fillMaxWidth()
-    ) {
-
+private fun Content(modifier: Modifier) {
+    Column(modifier) {
+        Spacer(Modifier.height(32.dp))
         Text(
             modifier = Modifier
                 .align(Alignment.CenterHorizontally),
             text = stringResource(id = R.string.app_name),
             style = YesevaOneTypography.displaySmall
         )
-
-    }
-
-}
-
-@Composable
-private fun Content(modifier: Modifier) {
-
-    Column(modifier) {
-
+        Spacer(Modifier.height(64.dp))
         Image(
             modifier = Modifier
                 .align(Alignment.CenterHorizontally),
             painter = painterResource(id = R.drawable.illustration_access),
             contentDescription = stringResource(id = R.string.contentdescription_access)
         )
-
         Spacer(Modifier.height(64.dp))
-
         Text(
             text = stringResource(id = R.string.access_headline),
             style = YesevaOneTypography.displaySmall
         )
-
         Spacer(Modifier.height(8.dp))
-
         Text(
             text = stringResource(id = R.string.access_body),
             style = PoppinsTypography.bodyLarge
         )
-
     }
-
 }
 
 @Composable
-private fun AccessOptions(onSignInClicked: () -> Unit, onSignUpClicked: () -> Unit) {
-
+private fun AccessMethods(onSignInClicked: () -> Unit, onSignUpClicked: () -> Unit) {
     Column(
         Modifier
             .fillMaxWidth()
     ) {
-
         Button(
             modifier = Modifier
                 .align(Alignment.CenterHorizontally),
             onClick = onSignInClicked
         ) {
-
             Text(
                 text = stringResource(id = R.string.button_signin),
                 style = PoppinsTypography.labelLarge
             )
-
         }
-
         Spacer(Modifier.height(8.dp))
-
         TextButton(
             modifier = Modifier
                 .align(Alignment.CenterHorizontally),
             onClick = onSignUpClicked
         ) {
-
             Text(
                 text = stringResource(id = R.string.button_signup),
                 style = PoppinsTypography.labelLarge
             )
-
         }
-
     }
-
 }

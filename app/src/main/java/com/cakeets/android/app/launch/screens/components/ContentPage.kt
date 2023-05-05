@@ -21,35 +21,26 @@ import com.cakeets.android.theme.YesevaOneTypography
 
 @Composable
 fun ContentPage(content: Feature) {
-
     Column(
         Modifier
             .fillMaxSize()
     ) {
-
         Spacer(Modifier.height(16.dp))
-
         Image(
             modifier = Modifier
                 .align(Alignment.CenterHorizontally),
             painter = painterResource(content.illustration),
             contentDescription = stringResource(id = R.string.contentdescription_onboarding_illustrations)
         )
-
         Spacer(Modifier.height(64.dp))
-
         Text(
             text = stringResource(content.headline),
             style = YesevaOneTypography.displaySmall
         )
-
         Spacer(Modifier.height(8.dp))
-
         Text(
             text = stringResource(content.body),
             style = PoppinsTypography.bodyLarge
         )
-
     }
-
 }

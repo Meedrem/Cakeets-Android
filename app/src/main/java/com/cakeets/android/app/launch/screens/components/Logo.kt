@@ -9,7 +9,7 @@ import androidx.compose.ui.unit.sp
 import com.cakeets.android.theme.YesevaOne
 
 @Composable
-fun LogoComponent() {
+fun Logo() {
     Text(
         text = "C",
         style = LogoTypography,

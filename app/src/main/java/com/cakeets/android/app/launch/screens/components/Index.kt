@@ -18,25 +18,20 @@ import com.cakeets.android.app.launch.screens.animations.getWidth
 
 @Composable
 fun BoxScope.Index(size: Int, currentPage: Int){
-
     Row(
         modifier = Modifier
             .align(Alignment.CenterStart),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.spacedBy(8.dp)
     ) {
-
         repeat(size) { page ->
             IndexComponent(isShowing = page == currentPage)
         }
-
     }
-
 }
 
 @Composable
 private fun IndexComponent(isShowing: Boolean){
-
     Box(
         Modifier
             .height(8.dp)
@@ -44,7 +39,6 @@ private fun IndexComponent(isShowing: Boolean){
             .clip(CircleShape)
             .background(getBackground(isShowing))
     )
-
 }
 
 @Composable

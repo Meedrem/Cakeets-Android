@@ -1,4 +1,4 @@
-package com.cakeets.android.ui
+package com.cakeets.android.shape
 
 import android.graphics.Matrix
 import androidx.compose.ui.geometry.Size

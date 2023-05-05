@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1069363249753",
+    "project_id": "cakeets",
+    "storage_bucket": "cakeets.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1069363249753:android:3bc78addf0d0a5945a6748",
+        "android_client_info": {
+          "package_name": "com.cakeets.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1069363249753-pifpnraoh3sv2p6k7g27f55adel2jse7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cakeets.android",
+            "certificate_hash": "117ab4bfe5a417db5ab3eb12cac30d2351d2d86d"
+          }
+        },
+        {
+          "client_id": "1069363249753-7db6eqepp602ivlutsch949vmdgg4sqd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKoyiYZzooMdq1KntbRwfYdKHJI8H4R74"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1069363249753-7db6eqepp602ivlutsch949vmdgg4sqd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
